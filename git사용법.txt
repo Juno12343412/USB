@@ -1,0 +1,53 @@
+git 용어 정리 
+
+i. push = 파일 github에 넣기
+
+ii. pull = 파일 github 에서 받아오기 
+
+iii .branch = 소프트웨어를 개발할 때에 개발자들은 동일한 소스코드를 함께 공유하고 다루게 됨
+동일한 소스코드 위에서 어떤 개발자는 버그를 수정하기도 하고 또 다른 개발자는 새로운 기능을 만들어 내기도 함
+ 이와 같이 여러 사람이 동일한 소스코드를 기반으로 서로 다른 작업을 할 때에는 각각 서로 다른 버전의 코드가 만들어 질 수 밖에 없다.
+이럴 때, 여러 개발자들이 동시에 다양한 작업을 할 수 있게 만들어 주는 기능이 바로 '브랜치(Branch)' 입니다. 각자 독립적인 작업 영역(저장소) 안에서 마음대로 소스코드를 변경할 수 있음.
+ 이렇게 분리된 작업 영역에서 변경된 내용은 나중에 원래의 버전과 비교해서 하나의 새로운 버전으로 만들어 낼 수 있습니다.
+
+iiii. merge = branch 끼리 합치는 것.
+
+iiiii. checkout = 현재 branch 에서 다른 branch로 이동하는 것.
+
+
+1. github 에서 프로젝트 생성후 컴퓨터에서 파일 첫 생성시
+
+파일을 받을 폴더 생성 → 폴더 우클릭 git bash here → 커맨드 창에다가 git config --global user.name " 님 github닉네임" → git config --global user.email "님 github 가입 이메일"(@github.com 이 아니라 네이버나 구글같은 가입시에 기입한 이메일)
+→ git config --global user.password "님 github비번"
+■여기까지가 폴더 생성후 폴더에 깃허브 로그인 과정
+
+2. 파일을 불러오기 (1의 과정이 전부 된 폴더)
+
+파일을 받을 폴더 우클릭 git bash here → git init → git add . → git status → git remote add origin 님이 연결할 프로젝트 주소 → git pull origin 님이 불러올 브랜치 (아마 처음엔 master일거임)
+ 
+■여기까지가 폴더에 github파일 불러오기 과정 
+
+3. 파일 수정후 파일을 github에 올리기 (1의 과정과 2가 전부 된 폴더)
+
+github에 올릴 폴더 우클릭 → git bash here →  git add . → git status →  git commit -m "수정 내역 작성"→ git push origin 님이 올릴 브랜치 (아마도 master)  
+
+■여기까지가 폴더를 github에 올리는 과정
+■만약 수정한파일이 1글씨라도 1 파일이라도 있고, 올릴 예정이라면 git add . 을 계속 해주자 올릴 파일을 갱신하는거기 때문에 해줘야한다 아니라면 수정되지 않은 사항이 올라가거나 오류가 뜨겠죠?
+■그리고 git status 를 항상 git add . 이후에 하는 이유는 git status 는 지금 현재 파일의 상태를 보는건데 수정되지 않은 사항이 있다면 빨간글씨로 무언가 뜰거다 그렇다면 그때 git add . 을해서 갱신해주고 커밋을 하면 된다
+■커밋은 꼭 push 전에 하고 해야한다 만약 커밋을 하지 않았다면 push 할때 오류가 뜰거니까 뜨면 git commit -m "수정내역" 하고 다시 push를 해라
+■만약 403 에러가 뜬다면 ?  ->  https://wrjeoung.tistory.com/m/43
+위의 사이트를 봐도 모르겠다면 git config --global --unset user.name, git config --global --unset user.email, git config --global --unset user.password 을한뒤 다시 1번의 로그인과정을 하자
+한뒤에 git config credential.helper store를 해주면 다시 로그인하라고 안뜸
+
+4. 폴더에 파일을 받은후 작업할때
+
+위의 1,2 과정을 전부 숙지하고 폴더에 적용시켰다면 github에서 받은 파일들이 폴더 안에 있을건데 만약 폴더안에 .gitignore 파일이 없다면 추가해야한다 처음 받을때 잘 확인하자. 없어서 추가해야하는 상황이라면
+https://www.toptal.com/developers/gitignore
+위의 사이트에 접속해서 Unity 프로젝트라면 Unity 라고 적고 검색해서 나온 글자들이 있을건데 전부 복사해서 메모장에 복사한뒤 메모장 저장할때 파일이름을 .gitignore 로 하고 밑에 파일 형식을 모든 파일로 한뒤
+저장하고 프로젝트 폴더 의 .git 폴더와 동일한 경로에 넣으면 된다.
+위의 과정이 끝났다면 작업을 해야할텐데 지금 현재 님이 있는 경로는 master branch에요 근데 master에서 작업을 하게 된다면  나중에 파일을 급하게 전 버전으로 돌려야 할 일이 있다면 번거롭겠죠 
+그래서 새로운 branch를 만들고 거기서 작업한뒤 master와 합친뒤 올리면 편하다~
+
+branch 만드는 법 = git branch -b 쓸이름 / branch 이동하는법 = git checkout branch이름  / 앞의 방법 두개를 한번에 하는 아주 편한 방법 =  git checkout -b branch이름 이렇게 하면 새로운 브랜치를 만들면서 이동을 해준다 .
+
+
