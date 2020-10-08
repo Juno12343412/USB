@@ -127,15 +127,22 @@ namespace USB
             }
         }
 
-        public void OnTriggerEnter2D(Collider2D collision)
+        public void OnTriggerEnter2D(Collider2D other)
         {
-            if(collision.CompareTag("EnemyRange"))
-            {
-                collision.gameObject.GetComponent<Enemy>().StartAttack();
-            }
-            if(collision.CompareTag("EnemyAttack"))
+            
+            if(other.gameObject.layer == LayerMask.NameToLayer("EnemyAttack"))
             {
                 Hp -= 10;
+            }
+        }
+
+        public void OnTriggerStay2D(Collider2D other)
+        {
+            if (other.gameObject.layer == LayerMask.NameToLayer("EnemyRange") && other.CompareTag("EnemyRange"))
+            {
+                Debug.Log(other.gameObject.transform.parent);
+                other.gameObject.transform.parent.GetComponent<Enemy>().StartAttack();
+                //other.gameObject.GetComponentInParent<Enemy>().StartAttack();
             }
         }
     }

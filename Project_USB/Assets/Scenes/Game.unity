@@ -1521,16 +1521,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy@Character
       objectReference: {fileID: 0}
-    - target: {fileID: 4719886038147402884, guid: f23285ef3e985b54a8e5e376eb54ad61,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6434782129946703417, guid: f23285ef3e985b54a8e5e376eb54ad61,
-        type: 3}
-      propertyPath: target
-      value: 
-      objectReference: {fileID: 6720773819529584972}
     - target: {fileID: 6434782129946703417, guid: f23285ef3e985b54a8e5e376eb54ad61,
         type: 3}
       propertyPath: spawnPos.Array.data[0]
@@ -1551,6 +1541,16 @@ PrefabInstance:
       propertyPath: spawnPos.Array.data[3]
       value: 
       objectReference: {fileID: 1206206392}
+    - target: {fileID: 6434782129946703417, guid: f23285ef3e985b54a8e5e376eb54ad61,
+        type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 6720773819529584972}
+    - target: {fileID: 6861925440600381676, guid: f23285ef3e985b54a8e5e376eb54ad61,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f23285ef3e985b54a8e5e376eb54ad61, type: 3}
 --- !u!1001 &6720773819529584971
@@ -1620,11 +1620,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 6720773819200087441, guid: 590ae27bc40fd304391e860a0523d73f,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 6720773819529584973, guid: 590ae27bc40fd304391e860a0523d73f,
         type: 3}
       propertyPath: spawnPos.Array.data[0]
@@ -1645,11 +1640,6 @@ PrefabInstance:
       propertyPath: spawnPos.Array.data[3]
       value: 
       objectReference: {fileID: 1927009423}
-    - target: {fileID: 6720773820063445391, guid: 590ae27bc40fd304391e860a0523d73f,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: 4
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 590ae27bc40fd304391e860a0523d73f, type: 3}
 --- !u!1 &6720773819529584972 stripped

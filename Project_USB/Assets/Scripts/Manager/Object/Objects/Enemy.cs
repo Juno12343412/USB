@@ -150,7 +150,7 @@ public class Enemy : PoolingObject
 
     public void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Attack"))
+        if (other.gameObject.layer == LayerMask.NameToLayer("PlayerAttack"))
         {
             enemyStats.curHeart--;
             if(enemyStats.curHeart > 0)
@@ -161,13 +161,13 @@ public class Enemy : PoolingObject
 
     public void OnTriggerStay2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
             //Debug.Log("Player");
             base.Release();
         }
 
-        if (other.CompareTag("Range"))
+        if (other.gameObject.layer == LayerMask.NameToLayer("PlayerRange"))
         {        
             spriteRenderer.enabled = true;
         }

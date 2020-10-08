@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5626546500609139873}
   - component: {fileID: 1422369492928538401}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Enemy@Range
   m_TagString: EnemyRange
   m_Icon: {fileID: 0}
@@ -61,13 +61,13 @@ GameObject:
   - component: {fileID: 6434782129946703417}
   - component: {fileID: 8263023387588949455}
   - component: {fileID: 7353662011609795049}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Enemy@Character
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2919283416835108545
 Transform:
   m_ObjectHideFlags: 0
@@ -75,7 +75,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4719886038147402884}
-  m_LocalRotation: {x: -0, y: -0, z: 0.8870109, w: 0.46174863}
+  m_LocalRotation: {x: 0, y: 0, z: 0.8870109, w: 0.46174863}
   m_LocalPosition: {x: 0.034, y: 0, z: 0}
   m_LocalScale: {x: 0.45496, y: 0.45496, z: 0.45496}
   m_Children:
@@ -181,6 +181,8 @@ MonoBehaviour:
   EnemyImage1: {fileID: 21300000, guid: 287284c1fa17f614485b9912d5f1ccc1, type: 3}
   EnemyImage2: {fileID: 21300000, guid: 7706ccf285d095b4db8f21933c04bf89, type: 3}
   EnemyImage3: {fileID: 21300000, guid: 3725f745841fbf24284950a71b35f8f5, type: 3}
+  EnemyRange: {fileID: 0}
+  EnemyAttack: {fileID: 0}
 --- !u!50 &8263023387588949455
 Rigidbody2D:
   serializedVersion: 4
@@ -231,7 +233,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1779190670073220216}
   - component: {fileID: 7508310243638957591}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Enemy@Attack
   m_TagString: EnemyAttack
   m_Icon: {fileID: 0}

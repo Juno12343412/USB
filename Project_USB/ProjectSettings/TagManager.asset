@@ -18,12 +18,12 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - PlayerAttack
+  - PlayerRange
+  - Player
+  - Enemy
+  - EnemyAttack
+  - EnemyRange
   - 
   - 
   - 
